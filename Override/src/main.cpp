@@ -127,14 +127,74 @@ void loop()
       client.publish("TrappenMaar/zone","oranje");
       Serial.println("oranje gestuurd");
 }
-    else if(temp == 'r'){
-      client.publish("TrappenMaar/zone","rood");
-      Serial.println("rood gestuurd");
+    else if(temp == 'h'){
+      client.publish("Wristbands","hartslagsensor uit");
+      Serial.println("hartslagsensor uit");
       }
+    else if(temp == '2'){
+      client.publish("Wristbands","Stop Wristbands");
+      Serial.println("stop wristbands");
+      }
+    
+    else if(temp == 'i'){
+      client.publish("Wristbands","hartslagsensor aan");
+      Serial.println("hartslagsensor aan");
+      }
+    else if(temp == 'w'){
+      client.publish("Wristbands","Herstart Wristbands");
+      Serial.println("herstart wristbands");
+      }
+    
+    else if(temp == '3'){
+      client.publish("Wristbands","Reset Wristbands");
+      Serial.println("reset wristbands");
+      }
+    
       
    
       
   }
+
+  /*
+    GEBRUIKTE TEKENS
+    0   "reset"
+    1   "eindcode garbage gestuurd"(1234)
+    2   "stop wristbands"
+    3   "reset wristbands"
+    4
+    5
+    6
+    7
+    8
+    9
+    
+    a
+    b
+    c
+    d
+    e
+    f
+    g   "groen gestuurd"
+    h   "hartslagsensor uit"
+    i   "hartslagsensor aan"
+    j
+    k
+    l
+    m
+    n
+    o   "oranje gestuurd"
+    p
+    q
+    r   "rood gestuurd"
+    s
+    t
+    u
+    v
+    w   "herstart wristbands"
+    x
+    y
+    z
+  */
   
   
   
