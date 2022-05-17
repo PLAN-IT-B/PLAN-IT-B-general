@@ -84,6 +84,7 @@ void reconnect()
       client.subscribe("controlpanel/#");
       client.subscribe("garbage/#");
       client.subscribe("controlpanel/#");
+      client.subscribe("TrappenMaar/#");
       }
     else
     {
@@ -129,6 +130,10 @@ void loop()
       client.publish("TrappenMaar/zone","oranje");
       Serial.println("oranje gestuurd");
 }
+    else if(temp == 'r'){
+      client.publish("TrappenMaar/zone","rood");
+      Serial.println("rood gestuurd");
+  }
     else if(temp == 'h'){
       client.publish("Wristbands","hartslagsensor uit");
       Serial.println("hartslagsensor uit");
@@ -167,6 +172,18 @@ void loop()
       client.publish("eindpuzzel/timer","partnerruil");
       Serial.println("Partnerruil");
     }
+    else if(temp=='s'){
+      client.publish("controlpanel/status","Trappenmaar Ready");
+      client.publish("controlpanel/status","Traingame Ready");
+      client.publish("controlpanel/status","Wristbands Ready");
+      client.publish("controlpanel/status","Garbage Ready");
+      client.publish("controlpanel/status","UV-slot Ready");
+      Serial.println("Elke status ready");
+    }
+    else if(temp=='f'){
+      client.publish("TrappenMaar/buffer","grote fout");
+      Serial.println("grote fout");
+    }
       
    
       
@@ -190,7 +207,7 @@ void loop()
     c
     d
     e
-    f
+    f   grote fout
     g   "groen gestuurd"
     h   "hartslagsensor uit"
     i   "hartslagsensor aan"
@@ -203,7 +220,7 @@ void loop()
     p   "partnerruil"
     q
     r   "rood gestuurd"
-    s
+    s   status ready
     t
     u
     v
