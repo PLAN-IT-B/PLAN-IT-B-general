@@ -111,7 +111,7 @@ void loop()
   {
     char temp = Serial.read();
     if(temp == '0'){
-      client.publish("•	controlpanel/reset","Reset escaperoom");
+      client.publish("controlpanel/reset","Reset escaperoom");
       Serial.println("reset");
     }
 
@@ -149,6 +149,14 @@ void loop()
       client.publish("Wristbands","Reset Wristbands");
       Serial.println("reset wristbands");
       }
+    else if(temp =='4'){
+      client.publish("garbage/status","Garbage code is correct ingegeven");
+      Serial.println("Garbage code correct ingegeven");
+    }
+    else if(temp =='5'){
+      client.publish("treingame/4decijfer","Trein-code 0");
+      Serial.println("Cijfer treingame is doorgestuurd");
+    }
     
       
    
@@ -161,8 +169,8 @@ void loop()
     1   "eindcode garbage gestuurd"(1234)
     2   "stop wristbands"
     3   "reset wristbands"
-    4
-    5
+    4   "Garbage code is correct ingegeven"
+    5   "Treingame cijfer"
     6
     7
     8
