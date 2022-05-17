@@ -168,6 +168,10 @@ void loop()
       client.publish("wristbands/code","Wristband-code 0000");
       Serial.println("Code wristbands is doorgestuurd");
     }
+    else if(temp=='7'){
+      client.publish("TrappenMaar/buffer","Reset TrappenMaar");
+      Serial.println("buffer resetten");
+    }
     else if(temp=='p'){
       client.publish("eindpuzzel/timer","partnerruil");
       Serial.println("Partnerruil");
@@ -184,7 +188,10 @@ void loop()
       client.publish("TrappenMaar/buffer","grote fout");
       Serial.println("grote fout");
     }
-      
+    else if(temp=='a'){
+      client.publish("TrappenMaar/buffer","omhoog");
+      Serial.println("buffer omhoog");
+    }  
    
       
   }
@@ -202,7 +209,7 @@ void loop()
     8
     9
     
-    a
+    a   "Buffer omhoog"
     b
     c
     d
