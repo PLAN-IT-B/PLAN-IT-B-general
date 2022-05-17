@@ -82,6 +82,8 @@ void reconnect()
       // Vul hieronder in naar welke directories je gaat luisteren.
       //Voor de communicatie tussen de puzzels, check "Datacommunicatie.docx". (terug tevinden in dezelfde repository) 
       client.subscribe("controlpanel/#");
+      client.subscribe("garbage/#");
+      client.subscribe("controlpanel/#");
       }
     else
     {
@@ -157,7 +159,14 @@ void loop()
       client.publish("treingame/4decijfer","Trein-code 0");
       Serial.println("Cijfer treingame is doorgestuurd");
     }
-    
+    else if(temp=='6'){
+      client.publish("wristbands/code","Wristband-code 0000");
+      Serial.println("Code wristbands is doorgestuurd");
+    }
+    else if(temp=='p'){
+      client.publish("eindpuzzel/timer","partnerruil");
+      Serial.println("Partnerruil");
+    }
       
    
       
@@ -171,8 +180,8 @@ void loop()
     3   "reset wristbands"
     4   "Garbage code is correct ingegeven"
     5   "Treingame cijfer"
-    6
-    7
+    6   "Code wristbands"
+    7   
     8
     9
     
@@ -191,7 +200,7 @@ void loop()
     m
     n
     o   "oranje gestuurd"
-    p
+    p   "partnerruil"
     q
     r   "rood gestuurd"
     s
