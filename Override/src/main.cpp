@@ -186,7 +186,7 @@ void loop()
     }
     else if(temp=='f'){
       client.publish("TrappenMaar/buffer","grote fout");
-      Serial.println("grote fout");
+      Serial.println("buffer omlaag");
     }
     else if(temp=='a'){
       client.publish("TrappenMaar/buffer","omhoog");
