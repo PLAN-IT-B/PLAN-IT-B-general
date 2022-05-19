@@ -179,7 +179,10 @@ void loop()
     else if(temp=='s'){
       client.publish("controlpanel/status","Trappenmaar Ready");
       client.publish("controlpanel/status","Traingame Ready");
+      for (int i = 0; i < 4; i++)
+      {
       client.publish("controlpanel/status","Wristbands Ready");
+      }     
       client.publish("controlpanel/status","Garbage Ready");
       client.publish("controlpanel/status","UV-slot Ready");
       Serial.println("Elke status ready");
@@ -191,7 +194,15 @@ void loop()
     else if(temp=='a'){
       client.publish("TrappenMaar/buffer","omhoog");
       Serial.println("buffer omhoog");
-    }  
+    }
+    else if(temp == 'l'){
+      client.publish("TrappenMaar/zone","vol");
+      Serial.println("vol gestuurd");
+  }
+    else if(temp == 'm'){
+      client.publish("TrappenMaar/zone","niet vol");
+      Serial.println("niet vol gestuurd");
+  }
    
       
   }
@@ -220,8 +231,8 @@ void loop()
     i   "hartslagsensor aan"
     j
     k
-    l
-    m
+    l   "vol"
+    m   "niet vol"
     n
     o   "oranje gestuurd"
     p   "partnerruil"
