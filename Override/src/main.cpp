@@ -85,6 +85,7 @@ void reconnect()
       client.subscribe("garbage/#");
       client.subscribe("controlpanel/#");
       client.subscribe("TrappenMaar/#");
+      client.subscribe("Wristbands/#");
       }
     else
     {
