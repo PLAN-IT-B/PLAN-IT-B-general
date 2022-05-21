@@ -205,6 +205,10 @@ void loop()
       Serial.println("niet vol gestuurd");
   }
    
+   else if(temp == 'v'){
+      client.publish("controlpanel/reset","Reset vuilbak");
+      Serial.println("reset vuilbak");
+    }
       
   }
 
@@ -242,7 +246,7 @@ void loop()
     s   status ready
     t
     u
-    v
+    v   "herstart vuilbak"
     w   "herstart wristbands"
     x
     y
