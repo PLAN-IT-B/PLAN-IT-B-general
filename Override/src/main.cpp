@@ -209,6 +209,11 @@ void loop()
       client.publish("controlpanel/reset","Reset vuilbak");
       Serial.println("reset vuilbak");
     }
+
+    else if(temp == '8'){
+      client.publish("vuilbak/bediening","Ontgrendel vuilbak");
+      Serial.println("Vuilbak ontgrendeld");
+    }
       
   }
 
@@ -222,8 +227,8 @@ void loop()
     5   "Treingame cijfer"
     6   "Code wristbands"
     7   
-    8
-    9
+    8   "Ontgrendel vuilbak"
+    9   
     
     a   "Buffer omhoog"
     b
