@@ -211,8 +211,12 @@ void loop()
     }
 
     else if(temp == '8'){
-      client.publish("vuilbak/bediening","Ontgrendel vuilbak");
+      client.publish("garbage/bediening","Ontgrendel vuilbak");
       Serial.println("Vuilbak ontgrendeld");
+    }
+    else if(temp == 'b'){
+      client.publish("garbage/bediening","Buzz lawaai om te starten");
+      Serial.println("Buzzzz");
     }
       
   }
@@ -231,7 +235,7 @@ void loop()
     9   
     
     a   "Buffer omhoog"
-    b
+    b   "buzzzz"
     c
     d
     e
